@@ -1,0 +1,506 @@
+/* Professional UI Color Palette & Design System */
+:root {
+    --bg-dark-app: #080b11;
+    --bg-sidebar: #0f131c;
+    --surface-glass: rgba(22, 29, 43, 0.7);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    /* Branding Core Colors */
+    --primary-glow: #38bdf8;
+    --carb-theme: #f59e0b;
+    --protein-theme: #ef4444;
+    --fat-theme: #10b981;
+    --vitamin-theme: #06b6d4;
+    
+    --font-stack: 'Inter', 'Hind Siliguri', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-stack);
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-dark-app);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Master Layout Grid */
+.app-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Sidebar Dashboard Navigation Styling */
+.sidebar {
+    width: 320px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2.5rem;
+    z-index: 10;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary-glow), #4f46e5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: white;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.brand-text h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand-text h2 span {
+    color: var(--primary-glow);
+    font-size: 0.85rem;
+    margin-left: 3px;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.brand-text p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.section-title {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.food-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* Highly Professional Nav Item Buttons */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 1rem;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: all 0.25s;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Active Selected Food Themes Styling */
+.nav-item.active.carbohydrate { border-color: var(--carb-theme); background: rgba(245, 158, 11, 0.06); color: var(--carb-theme); }
+.nav-item.active.protein { border-color: var(--protein-theme); background: rgba(239, 68, 68, 0.06); color: var(--protein-theme); }
+.nav-item.active.fat { border-color: var(--fat-theme); background: rgba(16, 185, 129, 0.06); color: var(--fat-theme); }
+.nav-item.active.vitamin { border-color: var(--vitamin-theme); background: rgba(6, 182, 212, 0.06); color: var(--vitamin-theme); }
+
+.nav-item.active .icon-wrap { background: currentColor; color: #000; }
+
+/* Dashboard Controls Button Layout */
+.controller-wrap {
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.control-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #161a23;
+    color: var(--text-primary);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.action-btn:disabled { opacity: 0.25; cursor: not-allowed; }
+.action-btn:not(:disabled):hover { background: #222936; border-color: rgba(255,255,255,0.2); }
+
+.next-premium {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+.next-premium:not(:disabled):hover { background: linear-gradient(135deg, #3b82f6, #2563eb); transform: translateY(-1px); }
+
+.step-progress-text { text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* Main Workspace Frame Layout */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle at 50% 0%, #111827, var(--bg-dark-app));
+}
+
+.top-bar {
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 19, 28, 0.4);
+    backdrop-filter: blur(12px);
+}
+
+.badge-organ {
+    background: rgba(167, 139, 250, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    color: #c084fc;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.status-indicator.live {
+    width: 8px;
+    height: 8px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #10b981;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.viewport {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+/* Premium Segmented Timeline Component */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    position: relative;
+}
+
+.timeline-node {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+
+.node-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.timeline-node.active {
+    opacity: 1;
+    color: var(--primary-glow);
+}
+.timeline-node.active .node-dot {
+    background: rgba(56, 189, 248, 0.15);
+    border-color: var(--primary-glow);
+    color: var(--primary-glow);
+}
+
+/* Dynamic Content Split View Grid */
+.workspace-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.5rem;
+    flex: 1;
+    min-height: 400px;
+}
+
+.visualizer-card, .details-card {
+    background: var(--surface-glass);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    backdrop-filter: blur(20px);
+}
+
+.card-meta {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.canvas-screen {
+    background-color: #090d16;
+    border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 12px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Medical Reports Card Text Stylings */
+.step-heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-color), transparent);
+    margin-bottom: 1.25rem;
+}
+
+.clinical-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+}
+
+/* --- Dynamic Components Animations & Layout Engine --- */
+.organ-title-box {
+    position: absolute;
+    top: 15px;
+    font-size: 0.85rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    padding: 4px 12px;
+    border-radius: 30px;
+    color: var(--text-muted);
+}
+
+.gland-container {
+    padding: 1.25rem 2.5rem;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-weight: 600;
+    font-size: 1rem;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.juice-drop {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50% 0 50% 50%;
+    transform: rotate(-45deg);
+    animation: dropFall 1.2s infinite linear;
+}
+
+.chain-container { display: flex; gap: 10px; margin-top: 30px; }
+.atom {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #020617;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+.break-animation { animation: explode 2s infinite ease-in-out; }
+
+.vessel {
+    width: 85%;
+    height: 50px;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+.blood-v { background: linear-gradient(90deg, #dc2626, #991b1b); color: white;}
+.lymph-v { background: linear-gradient(90deg, #f59e0b, #b45309); color: #000; }
+
+.absorb-particle {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    box-shadow: 0 0 12px currentColor;
+    animation: absorbFlow 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.metabolic-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 3px dashed var(--primary-glow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: rotateCircle 6s infinite linear;
+}
+.metabolic-circle span { animation: antiRotate 6s infinite linear; font-size: 0.85rem; font-weight: 700; }
+
+.atp-blast {
+    font-size: 4.5rem;
+    color: #fbbf24;
+    animation: pulseGlow 1s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Advanced Core Animation Frame Matrices */
+@keyframes dropFall {
+    0% { top: 40%; opacity: 0; transform: scale(0.5) rotate(-45deg); }
+    30% { opacity: 1; }
+    80% { top: 75%; opacity: 1; }
+    100% { top: 82%; opacity: 0; transform: scale(0.8) rotate(-45deg); }
+}
+
+@keyframes explode {
+    0%, 100% { transform: scale(1); gap: 10px; }
+    50% { transform: scale(0.9); gap: 40px; background-color: #f8fafc !important; color: #000; }
+}
+
+@keyframes absorbFlow {
+    0% { top: 35%; left: 48%; opacity: 1; }
+    40% { top: 70%; left: 48%; }
+    100% { top: 70%; left: 82%; opacity: 0; }
+}
+
+@keyframes rotateCircle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes antiRotate {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(1); filter: drop-shadow(0 0 10px rgba(251,191,36,0.4)); }
+    to { transform: scale(1.15); filter: drop-shadow(0 0 30px rgba(245,158,11,0.8)); }
+}
+
+/* --- FULL RESPONSIVE UX BREAKPOINTS (Mobile & Tablet Optimization) --- */
+@media (max-width: 1024px) {
+    .app-layout { flex-direction: column; overflow-y: auto; height: auto; }
+    .sidebar { width: 100%; height: auto; padding: 1.5rem; gap: 1.5rem; }
+    .main-content { height: auto; }
+    .viewport { padding: 1.5rem; }
+    .workspace-grid { grid-template-columns: 1fr; }
+    .canvas-screen { min-height: 280px; }
+    .timeline-container { overflow-x: auto; gap: 1rem; }
+    .timeline-node { flex-shrink: 0; }
+}
+
+@media (max-width: 640px) {
+    .top-bar { padding: 0 1rem; }
+    .timeline-container { display: none; } /* Hide timeline on tiny screens for UX clarity */
+    .food-nav-list { grid-template-columns: 1fr; display: grid; gap: 0.5rem; }
+    .sidebar { padding: 1rem; }
+}
