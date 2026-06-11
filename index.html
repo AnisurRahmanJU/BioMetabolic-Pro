@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMetabolic Pro - Interactive Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                <div class="brand-text">
+                    <h2>BioMetabolic<span>PRO</span></h2>
+                    <p>Advanced Body Simulator</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <span class="section-title">খাদ্য উপাদান নির্বাচন</span>
+                <div class="food-nav-list">
+                    <button class="nav-item carbohydrate active" onclick="selectFood('carbohydrate')">
+                        <span class="icon-wrap"><i class="fa-solid fa-wheat-awn"></i></span>
+                        <span class="nav-label">শর্করা (Carbohydrate)</span>
+                    </button>
+                    <button class="nav-item protein" onclick="selectFood('protein')">
+                        <span class="icon-wrap"><i class="fa-solid fa-egg"></i></span>
+                        <span class="nav-label">আমিষ (Protein)</span>
+                    </button>
+                    <button class="nav-item fat" onclick="selectFood('fat')">
+                        <span class="icon-wrap"><i class="fa-solid fa-bacon"></i></span>
+                        <span class="nav-label">স্নেহ (Fat / Lipid)</span>
+                    </button>
+                    <button class="nav-item vitamin" onclick="selectFood('vitamin')">
+                        <span class="icon-wrap"><i class="fa-solid fa-carrot"></i></span>
+                        <span class="nav-label">ভিটামিন ও মিনারেল</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-section controller-wrap">
+                <span class="section-title">ধাপ নিয়ন্ত্রণ</span>
+                <div class="control-actions">
+                    <button id="prev-btn" class="action-btn" onclick="changeStep(-1)" disabled>
+                        <i class="fa-solid fa-arrow-left"></i> পূর্ববর্তী
+                    </button>
+                    <button id="next-btn" class="action-btn next-premium" onclick="changeStep(1)">
+                        পরবর্তী <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="step-progress-text">ধাপ প্রোগ্রেস: <strong id="current-step-num">1</strong> / 5</div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-context">
+                    <span class="badge-organ" id="organ-name">অঙ্গ: মুখগহ্বর (Mouth)</span>
+                </div>
+                <div class="user-profile">
+                    <span class="status-indicator live"></span> Live Simulation Engine
+                </div>
+            </header>
+
+            <div class="viewport">
+                <div class="timeline-container">
+                    <div class="timeline-node active" id="tl-1">
+                        <div class="node-dot">১</div>
+                        <span>এনজাইম ক্ষরণ</span>
+                    </div>
+                    <div class="timeline-node" id="tl-2">
+                        <div class="node-dot">২</div>
+                        <span>অঙ্গভিত্তিক পাচন</span>
+                    </div>
+                    <div class="timeline-node" id="tl-3">
+                        <div class="node-dot">৩</div>
+                        <span>পুষ্টি শোষণ</span>
+                    </div>
+                    <div class="timeline-node" id="tl-4">
+                        <div class="node-dot">৪</div>
+                        <span>বিপাক (Metabolism)</span>
+                    </div>
+                    <div class="timeline-node" id="tl-5">
+                        <div class="node-dot">৫</div>
+                        <span>কোষীয় শক্তি (ATP)</span>
+                    </div>
+                </div>
+
+                <div class="workspace-grid">
+                    <div class="visualizer-card">
+                        <div class="card-meta">
+                            <span class="meta-label"><i class="fa-solid fa-display"></i> রিয়েল-টাইম গ্রাফিক্স ল্যাব</span>
+                        </div>
+                        <div id="animation-zone" class="canvas-screen">
+                            </div>
+                    </div>
+
+                    <div class="details-card">
+                        <div class="card-meta">
+                            <span class="meta-label"><i class="fa-solid fa-file-medical"></i> মেডিকেল ডাটা ও অ্যানালাইসিস</span>
+                        </div>
+                        <h3 id="step-title" class="step-heading">ধাপ ১: রস ও এনজাইম ক্ষরণ</h3>
+                        <div class="divider"></div>
+                        <p id="step-description" class="clinical-desc">লোড হচ্ছে...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
