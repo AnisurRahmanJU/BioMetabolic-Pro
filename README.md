@@ -1,2 +1,2 @@
 # Bio Metabolic Pro
-BioMetabolic Pro Advanced Body Simulator
+Bio Metabolic Pro Advanced Body Simulator
